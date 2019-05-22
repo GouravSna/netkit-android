@@ -12,7 +12,7 @@ android {
         targetSdkVersion 28
         versionCode 1
         versionName netkitVersion  // defined in version.gradle
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
@@ -35,21 +35,19 @@ tasks.withType(Javadoc) {
 }
 
 dependencies {
-    api 'com.google.code.gson:gson:2.8.2'
-    api 'com.android.support:support-annotations:28.0.0'
+    api 'com.google.code.gson:gson:2.8.5'
+    api 'androidx.annotation:annotation:1.0.2'
     // OkHttp
-    implementation 'com.squareup.okhttp3:okhttp:3.4.1'
+    implementation 'com.squareup.okhttp3:okhttp:3.14.2'
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
-        exclude group: 'com.android.support'
-    })
+    androidTestImplementation('androidx.test.espresso:espresso-core:3.1.0')
 
 
     // Tests
     testImplementation 'junit:junit:4.12'
     testImplementation 'org.hamcrest:hamcrest-library:1.3'
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'androidx.test:runner:1.1.1'
 }
 
 repositories {
